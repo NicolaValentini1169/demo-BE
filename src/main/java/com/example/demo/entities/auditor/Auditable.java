@@ -24,16 +24,16 @@ public abstract class Auditable {
     protected String createdBy;
 
     @CreatedDate
-    @Column(name = "dt_ins")
-    protected Date dtIns;
+    @Column(name = "created_date")
+    protected Date createdDate;
 
     @LastModifiedBy
     @Column(name = "updated_by", columnDefinition = "VARCHAR(36)")
     protected String updatedBy;
 
     @LastModifiedDate
-    @Column(name = "dt_upd")
-    protected Date dtUpd;
+    @Column(name = "updated_date")
+    protected Date updatedDate;
 
     public String getCreatedBy() {
         return createdBy;
@@ -43,12 +43,12 @@ public abstract class Auditable {
         this.createdBy = createdBy;
     }
 
-    public Date getDtIns() {
-        return dtIns;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setDtIns(Date dtIns) {
-        this.dtIns = dtIns;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     public String getUpdatedBy() {
@@ -59,11 +59,11 @@ public abstract class Auditable {
         this.updatedBy = updatedBy;
     }
 
-    public Date getDtUpd() {
-        return dtUpd;
+    public Date getUpdatedDate() {
+        return updatedDate;
     }
 
-    public void setDtUpd(Date dtUpd) {
-        this.dtUpd = dtUpd;
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
     }
 }
