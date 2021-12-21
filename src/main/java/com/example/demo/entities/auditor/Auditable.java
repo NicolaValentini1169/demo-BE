@@ -10,7 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * Classe di utilità per la gestione automatica dei dati in creazione e modifica
@@ -22,7 +21,7 @@ public abstract class Auditable {
 
     @CreatedBy
     @Column(name = "created_by", columnDefinition = "VARCHAR(36)")
-    protected UUID createdBy;
+    protected String createdBy;
 
     @CreatedDate
     @Column(name = "dt_ins")
@@ -30,17 +29,17 @@ public abstract class Auditable {
 
     @LastModifiedBy
     @Column(name = "updated_by", columnDefinition = "VARCHAR(36)")
-    protected UUID updatedBy;
+    protected String updatedBy;
 
     @LastModifiedDate
     @Column(name = "dt_upd")
     protected Date dtUpd;
 
-    public UUID getCreatedBy() {
+    public String getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(UUID createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -52,11 +51,11 @@ public abstract class Auditable {
         this.dtIns = dtIns;
     }
 
-    public UUID getUpdatedBy() {
+    public String getUpdatedBy() {
         return updatedBy;
     }
 
-    public void setUpdatedBy(UUID updatedBy) {
+    public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
     }
 

@@ -41,6 +41,14 @@ public class AuthenticationUtils {
                 : null;
     }
 
+    public static String getUserStringId() {
+        UUID userId = getUserId();
+
+        return userId != null
+                ? userId.toString()
+                : null;
+    }
+
     public static String getUserCn() {
         JWTUserDetail loggedUser = getLoggedUser();
 
